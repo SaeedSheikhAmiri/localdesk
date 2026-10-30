@@ -20,4 +20,4 @@ See SECURITY.md for the known OpenCode permission-metadata compatibility issue a
 - Text, DOCX, PDF and synthetic image normalization are covered by parser tests. The public default vision model was not downloaded or exercised end-to-end during this preparation.
 - Unit/security tests, JavaScript checks and the public source audit must all pass before the archive is built. The packaging check is repeated against the extracted archive.
 
-GitHub CI, real branch protection, repository secret scanning and a public release have not been activated by this local preparation. Those require the chosen repository and authorized maintainers.
+Repository controls are live GitHub settings, separate from this source archive. Inspect the Actions tab for the current CI result and the main-branch protection settings for enforcement; local test results alone do not establish those controls.
