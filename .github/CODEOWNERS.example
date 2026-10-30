@@ -1,0 +1,3 @@
+# Replace MAINTAINER_LOGIN with a real GitHub user or ORGANIZATION/TEAM that has write access.
+# Save as .github/CODEOWNERS, commit it, and enforce code-owner review on main.
+* @MAINTAINER_LOGIN
