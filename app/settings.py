@@ -8,7 +8,7 @@ def absolute_env(name,default):
  if not value.is_absolute():raise ValueError(name+' must be an absolute path')
  return value.resolve()
 DATA=absolute_env('LOCALDESK_DATA_DIR',HOME/'Library/Application Support/LocalDesk' if sys.platform=='darwin' else HOME/'.local/share/localdesk')
-if DATA==HOME or DATA==Path('/') or DATA==ROOT or ROOT in DATA.parents:
+if DATA==HOME or DATA==Path('/') or DATA==ROOT.parent or ROOT.parent in DATA.parents:
  raise ValueError('Runtime data must be a dedicated directory outside the source tree')
 STATE=DATA/'state';TASKS=DATA/'workspace';ENGINE_HOME=DATA/'engine-home';LOGS=DATA/'logs'
 def port(name,default):

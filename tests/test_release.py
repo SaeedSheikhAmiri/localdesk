@@ -82,3 +82,14 @@ class PublicCredentialScanTests(unittest.TestCase):
   with tempfile.TemporaryDirectory() as directory:
    root=Path(directory);(root/'settings.yml').write_text('sk-'+'or-v1-'+('Z'*30))
    self.assertIn(('settings.yml','provider token'),audit_public.inspect(root))
+
+
+class RuntimeDataLocationTests(unittest.TestCase):
+ def test_custom_data_inside_checkout_is_rejected_before_writing(self):
+  forbidden=ROOT/'unapproved-runtime-data'
+  env={**os.environ,'LOCALDESK_DATA_DIR':str(forbidden)}
+  code='import sys; sys.path.insert(0,sys.argv[1]); import settings'
+  result=subprocess.run([sys.executable,'-I','-B','-c',code,str(ROOT/'app')],env=env,capture_output=True,text=True)
+  self.assertNotEqual(result.returncode,0)
+  self.assertIn('outside the source tree',result.stderr)
+  self.assertFalse(forbidden.exists())
