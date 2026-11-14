@@ -80,6 +80,17 @@ node tests/test_chat_logic.cjs
 
 Use synthetic data. Open a focused pull request from a fork; passing checks alone never authorizes a merge. Maintainers review changes and decide what ships. Branch protection must be activated on the real GitHub repository; see [governance setup](docs/GOVERNANCE.md).
 
+## Skill safety
+
+Optional agent skills live under [`skills/`](skills/README.md), one directory per skill. LocalDesk never executes them. Before using a third-party skill, scan it with [SkillSpector](https://github.com/NVIDIA/SkillSpector):
+
+```sh
+sh scripts/scan-skill.sh        # static scan; no skill content leaves the machine for a model
+sh scripts/scan-skill.sh --llm  # explicit opt-in: contents go to the configured provider
+```
+
+The static scan still queries OSV.dev with dependency names. CI runs it whenever `skills/` changes. The scanner inspects files without installing or running the skill, and a `SAFE` verdict is heuristic, not proof — especially for Persian or image-based content.
+
 ## License
 
 Apache-2.0 for LocalDesk code and original generic assets. Dependencies, engines, and models keep their own licenses; see [THIRD_PARTY.md](THIRD_PARTY.md). No model or engine binaries are bundled.

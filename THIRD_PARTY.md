@@ -9,6 +9,7 @@ LocalDesk's Apache-2.0 license covers this project's code and original generic S
 | Pillow | Separately installed dependency, HPND/Pillow license | https://pillow.readthedocs.io/en/stable/about.html#license |
 | Ollama | Independent local service, not bundled | https://github.com/ollama/ollama/blob/main/LICENSE |
 | OpenCode | Independent task service, not bundled | https://github.com/anomalyco/opencode |
+| SkillSpector | Optional development/CI skill scanner, not bundled or installed by LocalDesk, Apache-2.0 | https://github.com/NVIDIA/SkillSpector |
 | Models / hosted providers | Chosen/downloaded by each user; not bundled | Model/provider-specific licenses and terms |
 
 No commercial font or copied workstation runtime is distributed. Typography uses system fonts. Installing a dependency or model does not imply its terms are identical to Apache-2.0. Review upstream terms before redistributing a combined binary product.
