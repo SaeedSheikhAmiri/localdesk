@@ -8,6 +8,7 @@
   ".github/dependabot.yml",
   ".github/pull_request_template.md",
   ".github/workflows/ci.yml",
+  ".github/workflows/skills.yml",
   ".gitignore",
   "CHANGELOG.md",
   "CONTRIBUTING.md",
@@ -35,6 +36,7 @@
   "app/security.py",
   "app/server.py",
   "app/settings.py",
+  "app/skill_gate.py",
   "app/source_parser.py",
   "app/sources.py",
   "app/state_store.py",
@@ -54,8 +56,11 @@
   "scripts/configure_github.py",
   "scripts/create_macos_app.py",
   "scripts/install.sh",
+  "scripts/scan-skill.sh",
+  "skills/README.md",
   "tests/test_app.py",
   "tests/test_chat_logic.cjs",
   "tests/test_features.py",
-  "tests/test_release.py"
+  "tests/test_release.py",
+  "tests/test_skill_gate.py"
 ]
